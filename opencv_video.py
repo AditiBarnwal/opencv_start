@@ -1,0 +1,16 @@
+import cv2
+
+cap = cv2.VideoCapture(0)
+
+while True:
+    ret, frame = cap.read()
+
+    # Display the resulting frame.
+    cv2.imshow('Its front view', frame)
+
+    # Press Q to exit.
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
